@@ -33,10 +33,13 @@ setInterval(() => {
     second.textContent.length === 1
       ? "0" + second.textContent
       : second.textContent;
-  if (second.textContent === "0") {
-    minute.textContent = new Date().getMinutes();
-    if (minute.textContent === "0") {
-      hour.textContent = new Date().getHours();
-    }
-  }
+
+  minute.textContent = new Date().getMinutes();
+  hour.textContent = new Date().getHours();
 }, 1000);
+
+const formatTime = (str) => {
+  str.textContent =
+    str.textContent.length === 1 ? "0" + str.textContent : str.textContent;
+  return str;
+};
