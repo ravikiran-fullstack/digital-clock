@@ -34,12 +34,12 @@ setInterval(() => {
       ? "0" + second.textContent
       : second.textContent;
 
-  minute.textContent = new Date().getMinutes();
-  hour.textContent = new Date().getHours();
+  minute.textContent = formatTime(new Date().getMinutes());
+  hour.textContent = formatTime(new Date().getHours());
 }, 1000);
 
 const formatTime = (str) => {
-  str.textContent =
-    str.textContent.length === 1 ? "0" + str.textContent : str.textContent;
+  console.log(str);
+  str = str.length === 1 ? "0" + str : str;
   return str;
 };
